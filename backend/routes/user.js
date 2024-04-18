@@ -44,4 +44,15 @@ router.post("/signup", async (req, res) => {
         message: "User created successfully",
         token: token
     })
+
+
+})
+
+const signinBody = zod.object({
+  username: zod.string().email(),
+password: zod.string()
+})
+
+router.post("/signin", async(req,res)=>{
+  const {success} = signinBody
 })
